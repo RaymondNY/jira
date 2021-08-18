@@ -1,0 +1,40 @@
+创建项目
+npx create-react-app my-app --template typescript
+除了index.html，index.css，index.js都可以删除
+
+eslint的安装  需要添加到本地的git
+npx mrm lint-staged  不成功就使用npx mrm@2 lint-staged
+package.json中"lint-staged"加入需要格式化的文件类型 ts,tsx
+
+
+安装Prettier 在git提交前对代码进行格式化
+yarn add --dev --exact prettier
+然后在项目下创建.prettierrc.json文件  win下手动创建  其他echo {}> .prettierrc.json
+防止冲突在package.json中添加
+"eslintConfig": {
+         "extends":"prettier"
+         }
+
+Next, create a .prettierignore Here’s an example:
+# Ignore artifacts:
+build
+coverage
+
+ts的配置文件tsconfig.json   可以配置导入目录的根目录 "baseUrl": "src"
+
+安装组件，如果是dev环境中使用就加上--dev参数 这样生产环境中就不会添加这些组件   在package.json中devDependencies
+
+json-server的安装
+yarn add json-server -D  -D就是--dev
+创建db.json
+json-server --watch db.json
+在package.json的scripts中添加"json-server": "json-server __json_server_mock__/db.json --watch --port 3001"
+然后运行yarn run json-server就可以mock了
+
+运行yarn start时候读取.env.development里的变量，运行yarn run build时候读取.env里的变量
+
+
+es6 Array.find()   Array.map()
+useEffect()没有第二个参数是一个无限循环的组件重新渲染。第二个参数是[]就只执行一次
+
+yarn add qs一个url拼接参数的库

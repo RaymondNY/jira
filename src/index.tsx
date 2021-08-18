@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import { ProjectListScreen } from "./screens/project-list";
 
 ReactDOM.render(
-  <React.StrictMode></React.StrictMode>,
+  <ProjectListScreen></ProjectListScreen>,
   document.getElementById("root")
 );
